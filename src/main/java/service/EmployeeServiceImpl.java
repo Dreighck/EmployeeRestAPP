@@ -9,6 +9,7 @@ import repo.EmployeeRepo;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -21,8 +22,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
-        return null;
+    public Employee getEmployeeById(int id) throws EmployeeWithTheIDDoesntExistException {
+        Optional<Employee> optional = employeeRepo.findById(id);
+        if (optional.isPresent())
+            return employeeRepo.getById(id);
+        throw new EmployeeWithTheIDDoesntExistException();
     }
 
     @Override
@@ -37,7 +41,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void deleteEmployee(int id) {
-
+        List<Employee> employees = getAllEmployee();
+        employees = employees.stream().filter(
+                (e)->
+                        e.getId()!= id)
+                .collect(Collectors.toList());
     }
 
     @Override

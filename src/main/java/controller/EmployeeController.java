@@ -39,7 +39,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/employees/{empID}")
-    public ResponseEntity<?> updateEmployeeHandler(@PathVariable("empID") int id){
+    public ResponseEntity<?> updateEmployeeHandler(@PathVariable("empID") int id) throws EmployeeWithTheIDDoesntExistException {
         ResponseEntity<?> responseEntity;
         Employee emp = employeeService.getEmployeeById(id);
         responseEntity = new ResponseEntity<>(emp, HttpStatus.OK);
