@@ -1,8 +1,8 @@
-package service;
+package com.example.employeerestapp.service;
 
-import exception.EmployeeWithTheIDAlreadyExistsException;
-import exception.EmployeeWithTheIDDoesntExistException;
-import model.Employee;
+import com.example.employeerestapp.exception.EmployeeWithTheIDAlreadyExistsException;
+import com.example.employeerestapp.exception.EmployeeWithTheIDDoesntExistException;
+import com.example.employeerestapp.model.Employee;
 
 import java.util.List;
 

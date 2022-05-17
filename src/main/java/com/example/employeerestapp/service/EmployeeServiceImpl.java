@@ -1,11 +1,11 @@
-package service;
+package com.example.employeerestapp.service;
 
-import exception.EmployeeWithTheIDAlreadyExistsException;
-import exception.EmployeeWithTheIDDoesntExistException;
-import model.Employee;
+import com.example.employeerestapp.exception.EmployeeWithTheIDDoesntExistException;
+import com.example.employeerestapp.model.Employee;
+import com.example.employeerestapp.repo.EmployeeRepo;
+import com.example.employeerestapp.exception.EmployeeWithTheIDAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repo.EmployeeRepo;
 
 import java.util.List;
 import java.util.Optional;

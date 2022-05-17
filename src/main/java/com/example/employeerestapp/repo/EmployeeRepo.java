@@ -1,6 +1,6 @@
-package repo;
+package com.example.employeerestapp.repo;
 
-import model.Employee;
+import com.example.employeerestapp.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;

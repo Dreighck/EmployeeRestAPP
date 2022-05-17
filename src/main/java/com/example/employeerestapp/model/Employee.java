@@ -1,4 +1,4 @@
-package model;
+package com.example.employeerestapp.model;
 
 import javax.persistence.*;
 

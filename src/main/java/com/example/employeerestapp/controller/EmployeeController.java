@@ -1,18 +1,19 @@
-package controller;
+package com.example.employeerestapp.controller;
 
-import exception.EmployeeWithTheIDAlreadyExistsException;
-import exception.EmployeeWithTheIDDoesntExistException;
-import model.Employee;
+import com.example.employeerestapp.exception.EmployeeWithTheIDDoesntExistException;
+import com.example.employeerestapp.model.Employee;
+import com.example.employeerestapp.exception.EmployeeWithTheIDAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.EmployeeService;
+import com.example.employeerestapp.service.EmployeeService;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/demo")
+@RequestMapping("/api/v1")
 public class EmployeeController {
 
     @Autowired
